@@ -4,5 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  kenticoCloud: {
+    endpoint: 'https://deliver.kenticocloud.com/',
+    projectid: '06f8ee7-e19a-46e7-acd8-d8e8f2abe5d6'
+  }
 };
