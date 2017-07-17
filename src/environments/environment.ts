@@ -7,6 +7,6 @@ export const environment = {
   production: false,
   kenticoCloud: {
     endpoint: 'https://deliver.kenticocloud.com/',
-    projectid: '06f8ee7-e19a-46e7-acd8-d8e8f2abe5d6'
+    projectid: '06f8ee78-e19a-46e7-acd8-d8e8f2abe5d6'
   }
 };

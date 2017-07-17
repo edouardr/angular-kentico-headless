@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "userDataDir": "${workspaceRoot}/.vscode/chrome",
+      "runtimeArgs": [
+        "--disable-session-crashed-bubble"
+      ],
+      "runtimeExecutable": "Applications/Opera Developer.app/Contents/MacOS/Opera"
+    },
+    // Use the following to start your browser
+    // Mac OS:
+    //   - Opera: Applications/Opera\ Developer.app/Contents/MacOS/Opera --remote-debugging-port=9222
+    {
+      "name": "Attach Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "url": "http://localhost:4200",
+      "port": 9222,
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true
+    }
+  ]
+}
