@@ -9,7 +9,6 @@ import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ThreeColumnsComponent } from './components/three-columns/three-columns.component';
 
-// kentico cloud
 import { DeliveryClientProvider } from './providers/kentico-client.provider';
 
 @NgModule({
@@ -28,4 +27,8 @@ import { DeliveryClientProvider } from './providers/kentico-client.provider';
   providers: [DeliveryClientProvider],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor() { }
+
+}

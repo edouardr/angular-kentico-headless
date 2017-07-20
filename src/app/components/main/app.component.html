@@ -1,4 +1,4 @@
 <app-navigation></app-navigation>
-<app-hero></app-hero>
+<app-hero *ngFor="let heroUnit of model.heroUnits" [model]="heroUnit"></app-hero>
 <app-three-columns></app-three-columns>
 <app-footer></app-footer>
