@@ -1,0 +1,9 @@
+<ngb-carousel>
+  <ng-template ngbSlide *ngFor="let slide of model">
+      <img class="d-block img-fluid" [src]="slide.image" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>{{slide.title}}</h3>
+        <p [innerHtml]="slide.marketingMessage"></p>
+      </div>
+  </ng-template>
+</ngb-carousel>

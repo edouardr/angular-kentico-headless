@@ -3,6 +3,10 @@ import { environment } from '../../environments/environment';
 import { ContentTypes } from '../content-types.class'
 import * as Models from '../models/_models'
 
+export class OfflineDeliveryClient extends DeliveryClient{
+
+}
+
 export function DeliveryClientFactory() {
 
   let projectId = environment.kenticoCloud.projectid;
