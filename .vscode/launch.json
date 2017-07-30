@@ -12,7 +12,7 @@
       "runtimeArgs": [
         "--disable-session-crashed-bubble"
       ],
-      "runtimeExecutable": "Applications/Opera Developer.app/Contents/MacOS/Opera"
+      "runtimeExecutable": "/Applications/Chromium.app/Contents/MacOS/Chromium"
     },
     // Use the following to start your browser
     // Mac OS:

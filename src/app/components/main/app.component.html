@@ -1,4 +1,11 @@
-<app-navigation></app-navigation>
-<app-carousel [model]="slides"></app-carousel>
-<app-three-columns></app-three-columns>
-<app-footer></app-footer>
+<div id="master-container">
+  <app-navigation></app-navigation>
+
+  <main id="content-wrap">
+    <div class="container-fluid">
+      <app-carousel [model]="slides"></app-carousel>
+    </div>
+    <app-three-columns></app-three-columns>
+    <app-footer></app-footer>
+  </main>
+</div>

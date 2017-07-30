@@ -1,0 +1,22 @@
+/**
+*
+* Misc structure + template rules
+*
+**/
+#master-container {
+  width: 100%;
+  max-width: $maxSiteWidth;
+  margin: 0 auto;
+}
+
+#content-wrap {
+  margin-bottom: 100px;
+}
+.container,
+.container-fluid {
+  max-width: $maxContentWidth;
+}
+
+.container-full {
+  width: 100%;
+}

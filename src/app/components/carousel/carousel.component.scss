@@ -1,0 +1,82 @@
+@import '../../../assets/config/variables';
+@import "../../../assets/config/bootstrap-overrides";
+@import '../../../assets/mixins/general';
+
+/**
+*
+* Carousel Feature
+*
+**/
+$carousel: (
+	contentPadding: (
+		default: 40px,
+		sm: 60px,
+		md: 40px
+	)
+);
+
+.carousel {
+	margin-bottom: $grid-gutter-width;
+	overflow: hidden;
+	/*
+	Core, default mobile first styles here
+	*/
+	.img-block {
+		width: 100%;
+		z-index: 1;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.content-block {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+	}
+
+	.caption {
+		padding: map-deep-get($carousel, "contentPadding", "default");
+		width: 100%;
+  		display: block;
+  		align-self: flex-end;
+	}
+
+	/*
+	Next / prev arrows
+	*/
+	.btn-swiper-nav {
+		@include centre('false', 'true', 'absolute');
+		position: absolute;
+		z-index: 10;
+
+		&.swipe-prev {
+			left: 0;
+		}
+		&.swipe-next {
+			right: 0;
+		}
+	}
+
+
+	//768px +
+	@media #{$sm} {
+
+		.caption {
+			padding: map-deep-get($carousel, "contentPadding", "sm");
+		}
+	}
+
+	//992px +
+	@media #{$md} {
+
+		.caption {
+			padding: map-deep-get($carousel, "contentPadding", "md");
+		}
+	}
+}
