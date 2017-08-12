@@ -25,12 +25,19 @@ export class ContentTypes {
     }
   }
 
-  static Artcile = {
+  static Article = {
     codeName: 'article',
     fields: {
       teaserImage: 'teaser_image',
       title: 'title',
       summary: 'summary'
+    }
+  }
+
+  static Cafe = {
+    codeName: 'cafe',
+    fields: {
+      title: 'title'
     }
   }
 }

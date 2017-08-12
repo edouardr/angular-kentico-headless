@@ -23,11 +23,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.deliveryClient.item<Home>('home')
-      .elementsParameter([ContentTypes.HeroUnit.codeName,
-        ContentTypes.HeroUnit.fields.title,
-        ContentTypes.HeroUnit.fields.image,
-        ContentTypes.HeroUnit.fields.marketingMessage
-      ])
       .get()
       .subscribe(response => {
         console.log(response);

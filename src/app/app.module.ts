@@ -9,6 +9,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ThreeColumnsComponent } from './components/three-columns/three-columns.component';
+import { FeaturetteComponent } from './components/featurette/featurette.component';
 
 import { DeliveryClientProvider } from './providers/kentico-client.provider';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -19,7 +20,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
     NavigationComponent,
     CarouselComponent,
     FooterComponent,
-    ThreeColumnsComponent
+    ThreeColumnsComponent,
+    FeaturetteComponent
   ],
   imports: [
     BrowserModule,

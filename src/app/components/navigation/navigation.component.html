@@ -1,75 +1,24 @@
-<header id="global-header">
-  <div class="utility-row">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="header-utility-links">
-            <ul>
-              <li><a href="#">Utility Link One</a></li>
-              <li><a href="#">Utility Link Two</a></li>
-              <li><a href="#">Utility Link Three</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+    aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <a class="navbar-brand" href="#">Carousel</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
-  <div class="primary-row">
-    <nav id="primary-nav" class="navbar navbar-default">
-      <div class="container-fluid">
-
-        <div class="navbar-header">
-          <a href="/" class="logo-link">
-                <img class="logo-img" src="static/imgs/site-logo.svg" alt="Site logo">
-            </a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-navbar" aria-expanded="false">
-                <svg class="icon default"><use xlink:href="/static/imgs/icons/defs/svg/sprite.defs.svg#menu"></use></svg>
-                <svg class="icon close"><use xlink:href="/static/imgs/icons/defs/svg/sprite.defs.svg#cross"></use></svg>
-                <span class="sr-only">Toggle navigation</span>
-            </button>
-        </div>
-
-        <div id="site-navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">Link 1</a>
-            </li>
-            <li>
-              <a href="#">Link 2</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="copy">Components</span>
-                        <span class="caret"></span>
-                    </a>
-              <ul class="dropdown-menu">
-                <li><a href="carousel.html">Carousel</a></li>
-                <li><a href="map.html">Google Map</a></li>
-                <li><a href="promo-tiles.html">Promo Tiles</a></li>
-                <li><a href="testimonial.html">Testimonial</a></li>
-                <li><a href="accordions.html">Accordions</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="copy">Sample Pages</span>
-                        <span class="caret"></span>
-                    </a>
-              <ul class="dropdown-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="content-page.html">Generic Content</a></li>
-                <li><a href="landing-page.html">Landing Page</a></li>
-                <li><a href="form-page.html">Sample Form</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <div id="global-search">
-          SEARCH
-        </div>
-      </div>
-    </nav>
-  </div>
-</header>
+</nav>

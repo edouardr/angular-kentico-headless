@@ -1,11 +1,12 @@
-<div id="master-container">
-  <app-navigation></app-navigation>
+<app-navigation></app-navigation>
 
-  <main id="content-wrap">
-    <div class="container-fluid">
-      <app-carousel [model]="slides"></app-carousel>
-    </div>
-    <app-three-columns></app-three-columns>
-    <app-footer></app-footer>
-  </main>
+<app-carousel [model]="slides"></app-carousel>
+
+<div class="container marketing">
+  <app-three-columns></app-three-columns>
+  <div *ngFor="let article of model.articles">
+    <app-featurette [model]="article"></app-featurette>
+  </div>
 </div>
+
+<app-footer></app-footer>

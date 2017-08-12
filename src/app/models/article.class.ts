@@ -10,7 +10,7 @@ export class Article extends ContentItem {
   constructor() {
     super({
       propertyResolver: (fieldName: string) => {
-        if (fieldName === ContentTypes.Artcile.fields.teaserImage) {
+        if (fieldName === ContentTypes.Article.fields.teaserImage) {
           return 'teaserImage';
         }
       }
