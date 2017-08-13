@@ -1,12 +1,12 @@
 <hr class="featurette-divider" />
 <div class="row featurette">
   <div class="col-md-7">
-    <h2 class="featurette-heading" [innerHtml]="model.title.text"></h2>
-    <p class="lead" [innerHtml]="model.summary.text"></p>
+    <h2 class="featurette-heading" [innerHtml]="model.title"></h2>
+    <p class="lead" [innerHtml]="model.summary"></p>
   </div>
   <div class="col-md-5">
     <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;"
-      [src]="model.teaserImage.assets[0].url"
+      [src]="model.image"
       data-holder-rendered="true">
   </div>
 </div>

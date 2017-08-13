@@ -21,7 +21,7 @@
       "styles": [
         "styles.scss"
       ],
-      "scripts": ["./node_modules/automapper-ts/dist/automapper.min.js"],
+      "scripts": ["../node_modules/automapper-ts/dist/automapper.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

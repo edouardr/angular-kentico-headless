@@ -1,10 +1,10 @@
 import { ContentTypes } from '../content-types.class'
 import { SafeHtml, SafeUrl } from '@angular/platform-browser';
 
-export class HeroUnitVM {
+export class ArticleVM {
   public title: string;
   public image: SafeUrl;
-  public marketingMessage: SafeHtml;
+  public summary: string;
 
   constructor() { }
 }
