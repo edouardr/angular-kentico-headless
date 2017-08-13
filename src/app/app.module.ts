@@ -14,6 +14,10 @@ import { FeaturetteComponent } from './components/featurette/featurette.componen
 import { DeliveryClientProvider } from './providers/kentico-client.provider';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
+import { ContentTypes } from './content-types.class';
+import { HeroUnitToViewModelResolver } from './resolvers/HeroUnitToViewModelResolver.class';
+import { automapper, IConfiguration } from 'automapper-ts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +41,15 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppModule {
 
-  constructor() { }
+  constructor() {
+    this.InitializeMapper();
+  }
 
+  public InitializeMapper(): void {
+
+    automapper.initialize((config: IConfiguration) => {
+      config.createMap(ContentTypes.HeroUnit.codeName, ContentTypes.HeroUnit.codeName + 'VM')
+      .converUsing(HeroUnitToViewModelResolver);
+    });
+  }
 }

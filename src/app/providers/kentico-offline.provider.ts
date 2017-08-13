@@ -14,7 +14,7 @@ export function DeliveryClientFactory() {
   let typeResolvers: TypeResolver[] = [
     new TypeResolver(ContentTypes.HeroUnit.codeName, () => new Models.HeroUnit()),
     new TypeResolver(ContentTypes.Home.codeName, () => new Models.Home()),
-    new TypeResolver(ContentTypes.Artcile.codeName, () => new Models.Article()),
+    new TypeResolver(ContentTypes.Article.codeName, () => new Models.Article()),
     new TypeResolver(ContentTypes.FactAboutUs.codeName, () => new Models.FactAboutUs())
   ];
 

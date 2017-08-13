@@ -5,6 +5,7 @@ import { DeliveryClientProvider } from '../../providers/kentico-client.provider'
 import { ContentTypes } from '../../content-types.class'
 import { Home, HeroUnit } from '../../models/_models';
 import { HeroUnitVM } from '../../view-models/hero-unit-vm.class';
+import 'automapper-ts';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,9 @@ import { HeroUnitVM } from '../../view-models/hero-unit-vm.class';
 export class AppComponent implements OnInit {
   public model: Home;
   private slides: HeroUnitVM[];
-  private _sanitizerService: DomSanitizer;
 
-  constructor(private deliveryClient: DeliveryClient, private sanitization: DomSanitizer) {
+  constructor(private deliveryClient: DeliveryClient) {
     this.model = new Home();
-    this._sanitizerService = sanitization;
    }
 
   ngOnInit() {
@@ -27,24 +26,8 @@ export class AppComponent implements OnInit {
       .subscribe(response => {
         console.log(response);
         this.model = response.item;
-        this.slides = this.model.heroUnits.map((value, index) => this.mapToViewModel(value));
+        this.slides = this.model.heroUnits.map((value, index) => automapper.map(ContentTypes.HeroUnit.codeName,
+          ContentTypes.HeroUnit.codeName+'VM', value));
       });
-  }
-
-  public mapToViewModel(model: HeroUnit): HeroUnitVM {
-    let viewModel: HeroUnitVM = new HeroUnitVM();
-    viewModel.title = model.title.text;
-
-    if (model.image && model.image.assets) {
-      viewModel.image =
-        this._sanitizerService.bypassSecurityTrustUrl(model.image.assets[0].url);
-    } else {
-      viewModel.image = null;
-    }
-
-    viewModel.marketingMessage =
-      this._sanitizerService.bypassSecurityTrustHtml(model.marketingMessage.value);
-
-    return viewModel;
   }
 }
