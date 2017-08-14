@@ -14,6 +14,6 @@ export class HeroUnit extends ContentItem {
           return 'marketingMessage';
         }
       }
-    })
+    });
   }
 }

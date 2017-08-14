@@ -16,8 +16,8 @@ import { ThreeColumnsComponent } from './components/three-columns/three-columns.
 import { FeaturetteComponent } from './components/featurette/featurette.component';
 
 import { ContentTypes } from './content-types.class';
-import { HeroUnitToViewModelResolver, ArticleToViewModelResolver } from './resolvers/_resolvers.namespace';
-import { HeroUnitVM, ArticleVM } from './view-models/_view-models.namespace';
+import { HeroUnitToViewModelResolver, ArticleToViewModelResolver, CafeToViewModelResolver } from './resolvers/_resolvers.namespace';
+import { HeroUnitVM, ArticleVM, CafeVM } from './view-models/_view-models.namespace';
 
 @NgModule({
   declarations: [
@@ -59,6 +59,10 @@ export class AppModule {
       config
         .createMap(ContentTypes.Article.codeName, ContentTypes.Article.codeName + 'VM')
         .convertUsing((resolutionContext: any): ArticleVM => ArticleToViewModelResolver(resolutionContext, this._sanitizerService));
+
+      config
+        .createMap(ContentTypes.Cafe.codeName, ContentTypes.Cafe.codeName + 'VM')
+        .convertUsing((resolutionContext: any): CafeVM => CafeToViewModelResolver(resolutionContext, this._sanitizerService));
     });
   }
 }

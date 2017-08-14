@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CafeVM } from '../../view-models/cafe-vm.class';
 
 @Component({
   selector: 'app-three-columns',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./three-columns.component.scss']
 })
 export class ThreeColumnsComponent implements OnInit {
+  @Input() model: CafeVM[];
 
   constructor() { }
 
