@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-lg-4" *ngFor="let cafe of model">
+    <img class="rounded-circle" [src]="cafe.photo" alt="Generic placeholder image"
+      width="140" height="140">
+    <h2>{{cafe.state}}</h2>
+    <p>{{cafe.phone}}</p>
+    <p>{{cafe.email}}</p>
+  </div>
+</div>

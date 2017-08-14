@@ -1,0 +1,73 @@
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+/**
+*
+* Global Variables and configuration
+*
+***/
+/**
+*
+* Structure
+*
+***/
+$contentWidth: 1200px;
+$maxContentWidth: 1200px;
+$maxSiteWidth: 100%;
+$grid-columns: 12 !default; //Number of columns in the grid.
+$grid-gutter-width: 30px !default; //Padding between columns. Gets divided in half for the left and right.
+
+/**
+*
+* Media queries
+*
+***/
+$screen-xs: 480px !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
+$screen-xl: 1400px !default;
+
+$xs: "only screen and (min-width : " $screen-xs ")"; //480+
+$sm: "only screen and (min-width : " $screen-sm ")"; //768+
+$md: "only screen and (min-width : " $screen-md ")"; //992+
+$lg: "only screen and (min-width : " $screen-lg ")"; //1200+
+$xl: "only screen and (min-width : " $screen-xl ")"; //1400+
+
+$to-xs: "only screen and (max-width : " $screen-xs - 1 ")"; //479-
+$to-sm: "only screen and (max-width : " $screen-sm - 1 ")"; //767-
+$to-md: "only screen and (max-width : " $screen-md - 1 ")"; //991-
+$to-lg: "only screen and (max-width : " $screen-lg - 1 ")"; //1199-
+$to-xl: "only screen and (max-width : " $screen-xl - 1 ")"; //1399-
+
+/**
+*
+* Colours
+*
+***/
+//-- colors:start --//
+//Brand pallette
+//Neutral
+$white: #ffffff;
+$black: #2a2a2a;
+$neutral-1: #f9f9f9;
+$neutral-2: #ececec;
+$neutral-3: #dfdfdf;
+$neutral-4: #d3d3d3;
+$neutral-5: #c6c6c6;
+$neutral-6: #b9b9b9;
+$neutral-7: #acacac;
+
+
+//-- colors:end --//
+
+/**
+*
+* Typography
+*
+* Ideally, this would be in _core-typography
+* They're needed here (with specific start / end comments)
+* In order for Styleguide to scrape SASS variables
+***/
+//-- typo:start --//
+$fontPrimary: 'Arial';
+$fontSecondary: 'Times New Roman';
+//-- typo:end --//

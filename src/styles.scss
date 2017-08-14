@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+// version 4
+@import "assets/config/variables";
+@import "assets/config/bootstrap-overrides";
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
+@import "assets/mixins/general";
+
+/**
+*
+* Common structure - global CSS ONLY
+*
+***/
+@import "assets/config/structure";
