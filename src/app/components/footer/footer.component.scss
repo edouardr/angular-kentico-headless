@@ -1,0 +1,194 @@
+@import '../../../assets/config/variables';
+@import "../../../assets/config/bootstrap-overrides";
+@import '../../../assets/mixins/general';
+
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+
+/**
+*
+* Global Site Footer
+*
+**/
+$globalFooter: (
+  dimensions: (
+    paddingTop: 60px,
+    paddingBottom: 50px
+  ),
+
+  style: (
+    primaryBgColor: $neutral-2,
+    secondaryBgColor: $neutral-1
+  )
+);
+
+#global-footer{
+
+  /*
+  Core, default mobile first styles here
+  */
+
+  .primary-row {
+    background-color: map-deep-get($globalFooter, "style", "primaryBgColor");
+  }
+
+  .secondary-row {
+    background-color: map-deep-get($globalFooter, "style", "secondaryBgColor");
+  }
+
+  .privacy-links {
+    padding: 15px 0 10px 0;
+
+  }
+
+
+  //767-
+  @media #{$to-sm} {
+    .links-block {
+      .col-xs-12 {
+        padding: 0;
+      }
+    }
+  }
+
+  //768px +
+  @media #{$sm} {
+    .primary-row {
+      padding-top: map-deep-get($globalFooter, "dimensions", "paddingTop");
+      padding-bottom: map-deep-get($globalFooter, "dimensions", "paddingBottom");
+    }
+
+    .privacy-links {
+      text-align: center;
+
+      p {
+        display: inline-block;
+      }
+
+      ul {
+        list-style: none;
+        display: inline-block;
+      }
+
+      li {
+        display: inline-block;
+        padding: 0 5px 0 10px;
+        position: relative;
+      }
+
+      //Fake pipe separators
+      li:not(:first-child):before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 0;
+        display: block;
+        width: 1px;
+        height: 18px;
+        background-color: black;
+      }
+    }
+  }
+}
+
+/**
+*
+* Global Footer social links
+*
+**/
+$footerSocialLinks: (
+  dimensions: (
+    paddingTop: 30px,
+    paddingBottom: 20px
+  )
+);
+
+.footer-social-links {
+  padding-top: map-deep-get($footerSocialLinks, "dimensions", "paddingTop");
+  padding-bottom: map-deep-get($footerSocialLinks, "dimensions", "paddingBottom");
+  text-align: center;
+
+  p {
+    color: $neutral-7;
+  }
+
+  //768px +
+  @media #{$sm} {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+  }
+}
+
+/**
+*
+* Global Footer link block
+* This component has accordion functionality for small screens
+* However styling is slightly different
+*
+**/
+$footerLinkBlock: (
+  dimensions: (
+    headerHeight: 40px,
+    contentPadding: 15px
+  ),
+
+  style: (
+    panelBorderColor: $neutral-3,
+    headerLinkColor: $black,
+    listLinkColor: $black
+  )
+);
+
+.footer-link-block {
+
+  /*
+  Core, default mobile first styles here
+  */
+  .panel {
+    border-bottom: solid 1px map-deep-get($footerLinkBlock, "style", "panelBorderColor");
+  }
+
+  .header {
+    padding: 10px map-deep-get($footerLinkBlock, "dimensions", "contentPadding");
+
+    .page-link {
+      color: map-deep-get($footerLinkBlock, "style", "headerLinkColor");
+      text-decoration: none;
+    }
+  }
+
+  .btn-toggle {
+    position: absolute;
+    right: map-deep-get($footerLinkBlock, "dimensions", "contentPadding");
+    top: 10px;
+  }
+
+  ul {
+    margin-left: map-deep-get($footerLinkBlock, "dimensions", "contentPadding");
+  }
+
+  //768px +
+  @media #{$sm} {
+
+    .panel {
+      border-bottom: 0;
+    }
+
+    .header {
+      padding: 0;
+    }
+
+    .btn-toggle {
+      display: none;
+    }
+    .content-block {
+      display: block;
+      height: auto !important; //To combat accordion inline styles
+      padding-top: 15px;
+    }
+
+    ul {
+      margin-left: 0;
+    }
+  }
+}

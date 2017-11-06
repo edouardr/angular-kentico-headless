@@ -1,0 +1,13 @@
+<app-navigation></app-navigation>
+
+<app-carousel [model]="slides"></app-carousel>
+
+<div class="container marketing">
+  <app-three-columns [model]="cafes"></app-three-columns>
+
+  <div *ngFor="let article of articles">
+    <app-featurette [model]="article"></app-featurette>
+  </div>
+</div>
+
+<app-footer></app-footer>

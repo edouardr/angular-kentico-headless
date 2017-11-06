@@ -1,0 +1,113 @@
+@import '../../../assets/config/variables';
+@import "../../../assets/config/bootstrap-overrides";
+@import '../../../assets/mixins/general';
+
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+
+/**
+*
+* Global Header
+*
+**/
+$globalHeader: (
+    dimensions: (
+        paddingTop: 60px,
+        paddingBottom: 50px
+    ),
+
+    style: (
+        primaryBgColor: $neutral-2,
+        utilityBgColor: $neutral-2
+    )
+);
+
+#global-header {
+
+    /*
+    Core, default mobile first styles here
+    */
+    .utility-row {
+        background-color: map-deep-get($globalHeader, "style", "utilityBgColor");
+    }
+}
+
+/**
+*
+* Primary Nav
+* Primary Navigation uses core bootstrap Navbar components
+* See: http://getbootstrap.com/components/#navbar
+**/
+
+#primary-nav {
+
+	/*
+	Core, default mobile first styles here
+	*/
+	margin: 0;
+
+	.logo-link {
+		display: block;
+		padding: 10px 15px;
+		float: left;
+	}
+
+	.logo-img {
+		height: 22px;
+		width: 146px;
+	}
+
+	.navbar-toggle {
+		top: 7px;
+		right: 15px;
+	}
+
+	//992px +
+	@media #{$md} {
+
+		.logo-link {
+			padding: 10px 0px;
+		}
+	}
+}
+
+/**
+*
+* Global Header > Utility links
+*
+**/
+$headerUtilityLinks: (
+	dimensions: (
+		paddingTop: 60px,
+		paddingBottom: 50px
+	),
+
+	style: (
+		linkFontSize: 12px,
+	)
+);
+
+.header-utility-links {
+
+	/*
+	Core, default mobile first styles here
+	*/
+	@extend .hidden-xs-up;
+	@extend .hidden-sm-up;
+	text-align: right;
+	padding: 10px 0;
+
+	ul {
+		@extend .list-unstyled;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+		padding: 0 10px;
+	}
+
+	a {
+		@include fontSize(map-deep-get($headerUtilityLinks, "style", "linkFontSize"));
+	}
+}

@@ -1,0 +1,138 @@
+/********************************
+Mixin to calculate REM value, based on supplied
+px value.
+
+Usage:
+
+.selector {
+	@include fontSize(35px);
+}
+
+-OR-
+
+.selector {
+	font-size: calculateRem(16px);
+}
+Source:
+http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+********************************/
+$browser-context: $font-size-base; // Default
+
+@function calculateRem($pixels, $context: $browser-context) {
+    @return #{($pixels/$context)}rem;
+}
+
+@function calculateEm($pixels, $context: $browser-context) {
+    @return #{($pixels/$context)}em;
+}
+
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}
+
+@mixin lineHeight($size) {
+    line-height: calculateRem($size);
+}
+
+
+/********************************
+Micro Clearfix
+Source:
+https://gist.github.com/mike-henderson/4948107
+http://nicolasgallagher.com/micro-clearfix-hack/
+
+Usage:
+elem {
+	@include clearfix-micro();
+}
+********************************/
+
+@mixin clearfix-micro() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Positioning mixin
+ *
+ * Used to center elements either vertically, horizontal or both.
+ *
+ * Defaults to both
+ *
+ * @param $horizontal = boolean;
+ * @param $vertical = boolean;
+ * @param $position = ('relative'|'absolute');
+ *
+ * NOTE: Element will often need 'display: block'
+ * to position correctly. This is intentionally
+ * left out of this mixin.
+ */
+@mixin centre($horizontal: 'true', $vertical: 'true', $position: 'relative' ) {
+    position: #{$position};
+
+    @if ($horizontal == 'true' and $vertical == 'true'){
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    @else if ($horizontal == 'true'){
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @else if ($vertical == 'true'){
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/********************************
+Aspect Ratio
+Source:
+https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+
+Usage:
+Note: class names are for illustration only; any selector will do.
+Aspect ratio is entirely flexible - eg, (1,4),  (6-8), whatever you like
+
+.sixteen-nine {
+    @include aspect-ratio(16, 9);
+}
+
+.four-three {
+    @include aspect-ratio(4, 3);
+}
+
+.one-one {
+    @include aspect-ratio(1, 1);
+}
+
+********************************/
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
