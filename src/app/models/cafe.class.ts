@@ -1,11 +1,14 @@
 import { ContentItem, Fields } from 'kentico-cloud-delivery-typescript-sdk';
 import { ContentTypes } from '../content-types.class'
+import { codeName, getPropertyForField } from '../providers/codename-decorator';
 
 export class Cafe extends ContentItem {
   public street: Fields.TextField;
   public city: Fields.TextField;
   public country: Fields.TextField;
   public state: Fields.TextField;
+
+  @codeName(ContentTypes.Cafe.fields.zipCode, this)
   public zipCode: Fields.TextField;
   public phone: Fields.TextField;
   public email: Fields.TextField;
@@ -14,9 +17,8 @@ export class Cafe extends ContentItem {
   constructor() {
     super({
       propertyResolver: (fieldName: string) => {
-        if (fieldName === ContentTypes.Cafe.fields.zipCode) {
-          return 'zipCode';
-        }
+        let name = getPropertyForField(this, fieldName) || fieldName;
+        return name;
       }
     });
   }

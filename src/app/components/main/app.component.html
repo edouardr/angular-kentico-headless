@@ -5,8 +5,8 @@
 <div class="container marketing">
   <app-three-columns [model]="cafes"></app-three-columns>
 
-  <div *ngFor="let article of articles">
-    <app-featurette [model]="article"></app-featurette>
+  <div *ngFor="let article of articles; let i = index">
+    <app-featurette [model]="article" [imageOnRight]="i%2 == 0"></app-featurette>
   </div>
 </div>
 

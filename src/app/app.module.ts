@@ -16,8 +16,8 @@ import { ThreeColumnsComponent } from './components/three-columns/three-columns.
 import { FeaturetteComponent } from './components/featurette/featurette.component';
 
 import { ContentTypes } from './content-types.class';
-import { HeroUnitToViewModelResolver, ArticleToViewModelResolver, CafeToViewModelResolver } from './resolvers/_resolvers.namespace';
-import { HeroUnitVM, ArticleVM, CafeVM } from './view-models/_view-models.namespace';
+import { HeroUnitToViewModelResolver, ArticleToViewModelResolver, CafeToViewModelResolver } from './resolvers';
+import { HeroUnitVM, ArticleVM, CafeVM } from './view-models';
 
 @NgModule({
   declarations: [

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, BrowserModule } from '@angular/platform-browser';
 import { DeliveryClient, SortOrder } from 'kentico-cloud-delivery-typescript-sdk';
 import { DeliveryClientProvider } from '../../providers/kentico-client.provider';
+
 import { ContentTypes } from '../../content-types.class'
-import { Home } from '../../models/_models.namespace';
-import { ArticleVM, HeroUnitVM, CafeVM } from '../../view-models/_view-models.namespace';
+import { Home } from '../../models';
+import { ArticleVM, HeroUnitVM, CafeVM } from '../../view-models';
 import 'automapper-ts';
 
 @Component({
@@ -23,20 +24,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.deliveryClient.item<Home>('home')
+    this.deliveryClient.item<Home>(ContentTypes.Home.codeName)
       .get()
       .subscribe(response => {
         console.log(response);
         this.model = response.item;
-        this.slides = this.model.heroUnits.map((value, index) => automapper.map(ContentTypes.HeroUnit.codeName,
-          ContentTypes.HeroUnit.codeName + 'VM',
-          value));
-        this.articles = this.model.articles.map((value, index) => automapper.map(ContentTypes.Article.codeName,
-          ContentTypes.Article.codeName + 'VM',
-          value));
-        this.cafes = this.model.cafes.map((value, index) => automapper.map(ContentTypes.Cafe.codeName,
-          ContentTypes.Cafe.codeName + 'VM',
-          value)).slice(0, 3);
+        this.slides = this.model.heroUnits.map(
+          (value, index) => automapper.map(ContentTypes.HeroUnit.codeName, ContentTypes.HeroUnit.codeName + 'VM', value));
+        this.articles = this.model.articles.map(
+          (value, index) => automapper.map(ContentTypes.Article.codeName, ContentTypes.Article.codeName + 'VM', value));
+        this.cafes = this.model.cafes.map(
+          (value, index) => automapper.map(ContentTypes.Cafe.codeName, ContentTypes.Cafe.codeName + 'VM', value))
+          .slice(0, 3);
       });
   }
 }

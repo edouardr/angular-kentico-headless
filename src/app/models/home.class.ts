@@ -1,8 +1,10 @@
 import { ContentItem, Fields } from 'kentico-cloud-delivery-typescript-sdk';
-import { HeroUnit, Article, Cafe } from './_models.namespace';
+import { HeroUnit, Article, Cafe } from './';
 import { ContentTypes } from '../content-types.class'
+import { codeName, getPropertyForField } from '../providers/codename-decorator';
 
 export class Home extends ContentItem {
+  @codeName(ContentTypes.Home.fields.heroUnit, this)
   public heroUnits: HeroUnit[];
   public articles: Article[];
   public cafes: Cafe[];
@@ -10,9 +12,8 @@ export class Home extends ContentItem {
   constructor() {
     super({
       propertyResolver: (fieldName: string) => {
-        if (fieldName === ContentTypes.Home.fields.heroUnit) {
-          return 'heroUnits';
-        }
+        let name = getPropertyForField(this, fieldName) || fieldName;
+        return name;
       }
     })
   }
