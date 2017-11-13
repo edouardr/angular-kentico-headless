@@ -9,6 +9,7 @@ import { Article } from '../../models/article.class';
 export class FeaturetteComponent implements OnInit {
 
   @Input() model: Article;
+  @Input() imageOnRight: boolean;
 
   constructor() { }
 
