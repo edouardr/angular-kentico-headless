@@ -1,7 +1,7 @@
 import { DeliveryClient, DeliveryClientConfig, TypeResolver } from 'kentico-cloud-delivery-typescript-sdk';
 import { environment } from '../../environments/environment';
 import { ContentTypes } from '../content-types.class'
-import * as Models from '../models/_models.namespace'
+import * as Models from '../models'
 
 export function DeliveryClientFactory() {
 

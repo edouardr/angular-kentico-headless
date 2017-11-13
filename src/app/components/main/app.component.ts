@@ -4,8 +4,8 @@ import { DeliveryClient, SortOrder } from 'kentico-cloud-delivery-typescript-sdk
 import { DeliveryClientProvider } from '../../providers/kentico-client.provider';
 
 import { ContentTypes } from '../../content-types.class'
-import { Home } from '../../models/_models.namespace';
-import { ArticleVM, HeroUnitVM, CafeVM } from '../../view-models/_view-models.namespace';
+import { Home } from '../../models';
+import { ArticleVM, HeroUnitVM, CafeVM } from '../../view-models';
 import 'automapper-ts';
 
 @Component({
